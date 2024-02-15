@@ -1,5 +1,10 @@
 import requests
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+ApiKey = os.getenv("API_KEY")
 input = input("Enter your question: ")  # Get input from user
 
 
@@ -8,7 +13,7 @@ url = "https://chatgpt-gpt4-ai-chatbot.p.rapidapi.com/ask"
 payload = { "query": f"{input}" }
 headers = {
 	"content-type": "application/json",
-	"X-RapidAPI-Key": "21c98ce353msh2e77624f518ce0bp1fb9f3jsn84b6d813ebd7",
+	"X-RapidAPI-Key": f"{ApiKey}", #Replace with yoru own api key :)
 	"X-RapidAPI-Host": "chatgpt-gpt4-ai-chatbot.p.rapidapi.com"
 }
 
